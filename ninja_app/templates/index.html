@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+</head>
+
+<body>
+    <p class="top">Your Gold <input value={{request.session.gold}}></p>
+    <main>
+        <form action="/find_gold_farm/" method="post">
+            {% csrf_token %}
+            <h2>Farm</h2>
+            <p>(earns 10-20 gold!)</p>
+            <button type="submit">Find Gold!</button>
+        </form>
+        <form action="/find_gold_cave/" method="post">
+            {% csrf_token %}
+            <h2>Cave</h2>
+            <p>(earns 10-20 gold!)</p>
+            <button type="submit">Find Gold!</button>
+        </form>
+        <form action="/find_gold_house/" method="post">
+            {% csrf_token %}
+            <h2>House</h2>
+            <p>(earns 10-20 gold!)</p>
+            <button type="submit">Find Gold!</button>
+        </form>
+        <form action="/find-gold-quest/" method="post">
+            {% csrf_token %}
+            <h2>Quest</h2>
+            <p>(earns/takes 0-50 gold!)</p>
+            <button type="submit">Find Gold!</button>
+        </form>
+    </main>
+    <footer>
+        <h3>Activites</h3>
+        <textarea name="" id="" cols="80" rows="5">
+            {% for session in sessions %}
+            <ul>
+                {{ request.session.message }}
+            </ul>
+            {% endfor %}
+        </textarea>
+    </footer>
+</body>
+
+</html>

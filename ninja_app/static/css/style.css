@@ -1,0 +1,19 @@
+body {
+  margin: 3% 10%;
+}
+main {
+  display: flex;
+  justify-content: space-evenly;
+}
+textarea {
+  overflow-y: scroll;
+}
+footer,
+.top {
+  margin: 0 11%;
+}
+/* {% for session in request.session.gold %}
+<li>
+    {{ gold.message }}
+</li>
+{% endfor %} */
